@@ -27,4 +27,15 @@ This branching function is what makes Git really powerful. Multiple people creat
 Check out [Branching Blog](https://www.varonis.com/blog/git-branching) for complete understanding of Branching.
 
 ## Git commands
-1. git status - checks status od commit, tracked and unstracked file, and related next commands as well
+1.  ```git status ``` - checks status of commit, tracked and unstracked file, and related next commands as well
+2. To connect your local repo to central ``` git config --global user.email "github-emailId" ``` and ``` git config --global user.name "username-of-github" ```
+3. ``` git config --list ``` - to check add user name and email
+4. ``` which git ``` -  to check where my git is available
+5. ``` history ``` - to check all the previous commands which we have ran
+6. ``` git rm -rf file-name ``` - to delete any file 
+7. ``` clear ``` - to clear the git command screen.
+8. ``` git log ``` - It will show the details of latest commit which we have done. Like hash key value of the 
+commit, pointer to main branch (or whichever branch we are working on), email and user name of github, and the
+message which have added to that commit.
+
+
