@@ -34,8 +34,9 @@ Check out [Branching Blog](https://www.varonis.com/blog/git-branching) for compl
 5. ``` history ``` - to check all the previous commands which we have ran
 6. ``` git rm -rf file-name ``` - to delete any file 
 7. ``` clear ``` - to clear the git command screen.
-8. ``` git log ``` - It will show the details of latest commit which we have done. Like hash key value of the 
+8. ``` git log ``` - It will show the details of all commits which we have done. Like hash key value of the 
 commit, pointer to main branch (or whichever branch we are working on), email and user name of github, and the
 message which have added to that commit.
+9. ``` git show <hash key id of any commit which we can get from git log>``` - It will show details of which file is updated and what are the new details added.  
 
 
