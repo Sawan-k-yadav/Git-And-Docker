@@ -1,5 +1,9 @@
+This file is created for learning of stashing 
 
 This is the same file I am editing third time after doing git stash to older details.
 
 This is the same file after doing stash to the older details with git stash command.
+
+
+
 
