@@ -39,9 +39,11 @@ Check this [Branching Blog](https://www.varonis.com/blog/git-branching) for comp
 8. ``` git log ``` - It will show the details of all commits which we have done. Like hash key value of the 
 commit, pointer to main branch (or whichever branch we are working on), email and user name of github, and the
 message which have added to that commit.
++ ``` git log --oneline ``` - It gives all the commit message with their hash key which we have added till now.
++ ``` git revert <commit id> ``` - It will revert back the git from specific commit (with commit id) to working directory. It will ask message for reverting, after adding you message type ``` :qa! ``` to exit message console page to proceed reverting process.
 9. ``` git show <hash key id of any commit which we can get from git log>``` - It will show details of which file is updated and what are the new details added.
 10. ``` && ``` - To run to command together we can use && in between.  
-11. ``` git reset < . or file-name > ``` - To reset the change which we have added my mistake. Then ``` git status ``` to verify if reset is done. Always recommended to add file in .gitignore if we don't want add in central repo.
+11. ``` git reset < . or file-name > ``` - To reset the changes which we have added by mistake back from staging to working directory. Then ``` git status ``` to verify if reset is done. Always recommended to add file in .gitignore if we don't want add in central repo.
 12. ``` git branch `` - To check in which branch we are working on.
 13. ``` git branch branch-name ``` - To create new branch.
 14. ``` git checkout branch-name ``` - To switch to other branch.
@@ -55,9 +57,13 @@ To resolve conflict we need to manually go an check/verify both the file content
 
 16. ``` git branch -d branch-name ``` - To delete branch.
 
-17. Stashing - Often, when you’ve been working on part of your project, things are in a messy state and you want to switch branches for a bit to work on something else. The problem is, you don’t want to do a commit of half-done work just so you can get back to this point later. The answer to this issue is the git stash command.
+17. Stashing (Hidding) - Often, when you’ve been working on part of your project, things are in a messy state and you want to switch branches for a bit to work on something else. The problem is, you don’t want to do a commit of half-done work just so you can get back to this point later. The answer to this issue is the git stash command.
 
 + Read this blog of [Stashing]((https://www.varonis.com/blog/git-branching)) for more details
++ ``` git stash ``` - To add current file or code which we dont want to commit to the stash storage.
++ ``` git stash list ``` - To see all the stashed file with one id which we have added in stash.
++ ``` git stash apply ``` - If you want to apply one of the older stashes and bring it back for work or commit, you can specify it by naming it, like this: ``` git stash apply stash@{2} ```. If you don’t specify a stash id, Git assumes the most recent stash and tries to apply it.
++ ``` git stash clear ``` - To clear stash workspace or storage from stashed files as does not clean by itself after apply the files and bringing back to work or commits.
 
 
 
