@@ -46,5 +46,6 @@ message which have added to that commit.
 13. ``` git branch branch-name ``` - To create new branch.
 14. ``` git checkout branch-name ``` - To switch to other branch.
 15. ``` git merge branch-name ``` - To merge to branch.
+16. ``` git branch -d branch-name ``` - To delete branch.
 
 
