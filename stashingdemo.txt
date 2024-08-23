@@ -1,0 +1,1 @@
+This is the same file I am editing third time after doing git stash to older details.
