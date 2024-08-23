@@ -48,11 +48,16 @@ message which have added to that commit.
 15. ``` git merge branch-name ``` - To merge to branch.
 
 + Note: If I will create any file or do any changes in the code from branchA (other than main branch) then after commit that will not appear in main branch. 
-+ Merge Conflit --
++ Merge Conflit -- It happens when we create or write in a file name with same name from different branch. At the time of merge it give conflict.
+To resolve conflict we need to manually go an check/verify both the file content which is coming in conflit. If we resolve the issue if there is any or verify both the file content, remove conflit sign massage(current and incoming changes) from the respective file then add the file and commit the changes again.
 
-![alt text](Git Conflit.png?raw=true "Git Conflit")
+![alt text](Git-Conflit.png?raw=true "Git Conflit")
 
 16. ``` git branch -d branch-name ``` - To delete branch.
+
+17. Stashing - Often, when you’ve been working on part of your project, things are in a messy state and you want to switch branches for a bit to work on something else. The problem is, you don’t want to do a commit of half-done work just so you can get back to this point later. The answer to this issue is the git stash command.
+
++ Read this blog of [Stashing]((https://www.varonis.com/blog/git-branching)) for more details
 
 
 
