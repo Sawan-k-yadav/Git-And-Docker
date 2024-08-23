@@ -26,7 +26,7 @@ This branching function is what makes Git really powerful. Multiple people creat
 
 ![alt text](what-is-a-merge.gif?raw=true "Branch merging")
 
-Check out [Branching Blog](https://www.varonis.com/blog/git-branching) for complete understanding of Branching.
+Check this [Branching Blog](https://www.varonis.com/blog/git-branching) for complete understanding of Branching.
 
 ## Git commands
 1.  ```git status ``` - checks status of commit, tracked and unstracked file, and related next commands as well
@@ -46,6 +46,13 @@ message which have added to that commit.
 13. ``` git branch branch-name ``` - To create new branch.
 14. ``` git checkout branch-name ``` - To switch to other branch.
 15. ``` git merge branch-name ``` - To merge to branch.
+
 + Note: If I will create any file or do any changes in the code from branchA (other than main branch) then after commit that will not appear in main branch. 
++ Merge Conflit --
+
+![alt text](Git Conflit.png?raw=true "Git Conflit")
+
+16. ``` git branch -d branch-name ``` - To delete branch.
+
 
 
