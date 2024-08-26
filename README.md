@@ -1,4 +1,4 @@
-## GIT
+# GIT
 It is Source Code Management (SCM) system which is used for version control.
 
 1. While working on any project we need to initialize the git ``` git init ```
@@ -59,11 +59,55 @@ To resolve conflict we need to manually go an check/verify both the file content
 
 17. Stashing (Hidding) - Often, when you’ve been working on part of your project, things are in a messy state and you want to switch branches for a bit to work on something else. The problem is, you don’t want to do a commit of half-done work just so you can get back to this point later. The answer to this issue is the git stash command.
 
-+ Read this blog of [Stashing]((https://www.varonis.com/blog/git-branching)) for more details
++ Read this blog of [Stashing](https://www.varonis.com/blog/git-branching) for more details
 + ``` git stash ``` - To add current file or code which we dont want to commit to the stash storage.
 + ``` git stash list ``` - To see all the stashed file with one id which we have added in stash.
 + ``` git stash apply ``` - If you want to apply one of the older stashes and bring it back for work or commit, you can specify it by naming it, like this: ``` git stash apply stash@{2} ```. If you don’t specify a stash id, Git assumes the most recent stash and tries to apply it.
 + ``` git stash clear ``` - To clear stash workspace or storage from stashed files as does not clean by itself after apply the files and bringing back to work or commits.
 
 
+# Docker
 
+Docker is a powerful tool for building, running and deploying applications, and the Docker Engine (written in Linux) is the core component that makes it all possible.
+
+##  Virtualization
+
+Virtualization uses software to create an abstraction layer over computer hardware, enabling the division of a single computer's hardware components—such as processors, memory and storage—into multiple virtual machines (VMs). Each VM runs its own operating system (OS) and behaves like an independent computer, even though it is running on just a portion of the actual underlying computer hardware.
+
+It follows that virtualization enables more efficient use of physical computer hardware and allows a greater return on an organization’s hardware investment.
+Virtualization enables cloud providers to serve users with their existing physical computer hardware.
+
+Popular Virtualization offered by the companies are VMware, Oracle vertual box etc. 
+
+It runs on ``` Hypervisor ``` - It is the software layer that coordinates VMs. It serves as an interface between the VM and the underlying physical hardware, ensuring that each has access to the physical resources it needs to execute. It also ensures that the VMs don’t interfere with each other by impinging on each other’s memory space or compute cycles. Check this Blog for understanding [Virtualization](https://www.ibm.com/topics/virtualization).
+
+![alt text](Virtualization.png?raw=true "Virtualization")
+
+### <span style="color: red;">Limitation of Virtualization</span>
+
+1. Once we will allocate some OS, RAM and Memory to any VM while doing Virtualization, we cannot increase it futher if required as it is fixed and not dynamic. 
+2. Also we cannot remove to make useful for Host OS from which it is created.
+
+## Containerization
+
+Containerization is OS-based virtualization that creates multiple virtual units in the userspace, known as Containers. Containers share the same host kernel but are isolated from each other through private namespaces and resource control mechanisms at the OS level.
+It is dynamic, means whenever we need we can increase it resource size like memory, cpu and RAM. Also when we are not using it then we can stop container, so it will be free from resources unlike VMs in virtualization. Check this Blog for understanding [Containerization](https://www.geeksforgeeks.org/containerization-using-docker/).
+
+![alt text](Containerization.png?raw=true "Containerization vs Virtualization")
+
++ ### Port mapping in Docker
+        If we have any container (let say it have flask app) then we cannot use it with our host machine directly with host ip (or local host). Port mapping in Docker is the process of mapping a port on the host machine to a port in a container. This allows users to access applications running inside containers from outside the Docker host. 
+        
+        To assign port mapping when running a new container, users can use the -p option in the docker run command. The syntax is -p host_port:container_port. For example, to map port 8080 on the host to port 80 inside the container, users can use -p 8080:80. Users can specify multiple port mappings by repeating the -p flag. 
+
+
+## Docker commands:
+
+1. ``` docker ``` - Run this on cmd to check DOcker installed or not
+2. ``` docker version ``` - command provides information about the Docker Engine version installed on your system.
+3. ``` docker build -t image_name . ``` -It creates docker image with imagename from local folder (.) .
+4. ``` docker images ``` - To see the created images
+5. ``` docker run -d -p host_port:container_port image_name ``` -  To RUN the docker container  in detached mode, mapping a specific port on the host machine to a port within the container.
++ ``` -d``` - It imeans detach mode, meaning it will run in the background and you can continue to use the terminal.
+6. ``` docker ps ``` - To check if docker container is running or not
+7. ``` docker stop <container_id> ``` - To stop the docker container 
