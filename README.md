@@ -111,3 +111,4 @@ It is dynamic, means whenever we need we can increase it resource size like memo
 + ``` -d``` - It imeans detach mode, meaning it will run in the background and you can continue to use the terminal.
 6. ``` docker ps ``` - To check if docker container is running or not
 7. ``` docker stop <container_id> ``` - To stop the docker container 
+8. To determine memory usage, use the ``` docker stats ``` command to monitor running containers. If find any containers which are not use then we can delete, if needed.
