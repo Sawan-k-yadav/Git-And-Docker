@@ -107,8 +107,43 @@ It is dynamic, means whenever we need we can increase it resource size like memo
 2. ``` docker version ``` - command provides information about the Docker Engine version installed on your system.
 3. ``` docker build -t image_name . ``` -It creates docker image with imagename from local folder (.) .
 4. ``` docker images ``` - To see the created images
++ ``` docker rmi -f image_name ``` - To delete any image from the docker image list. ``` -f ``` for force delete.
++ ``` docker rmi -f image_name:tag ``` - To delete with whatever the latest tag is present. latest is default tag is not changed.
 5. ``` docker run -d -p host_port:container_port image_name ``` -  To RUN the docker container  in detached mode, mapping a specific port on the host machine to a port within the container.
 + ``` -d``` - It imeans detach mode, meaning it will run in the background and you can continue to use the terminal.
-6. ``` docker ps ``` - To check if docker container is running or not
+6. ``` docker ps ``` - To check details of runninf container.
++ ``` docker ps -a ``` - To check details of all the containers even if they are running or not.
 7. ``` docker stop <container_id> ``` - To stop the docker container 
 8. To determine memory usage, use the ``` docker stats ``` command to monitor running containers. If find any containers which are not use then we can delete, if needed.
+
+## Additional commands:
+
+9. ``` where docker ``` - To check file and .exe file location of docker
+10. ``` docker info ``` - To get the full details of docker which which we have installed.
+11. ``` docker -v ``` - To check the version of docker installed.
+
+#### For using docker hub and hosting my images in docker we need to login docker hub from the terminal
+
+12. ``` docker login ``` - To login docker hub from terminal. It will ask user name and password which you have given while created docker hun account online.
+13. ``` docker tag image_name user_name/repo_name or image_name ``` -  This allows you to push the image to a remote repository of docker hub.
+14. ``` docker push user_name/repo_name or image_name ``` -  This command is used to upload a Docker image to a remote repository, such as Docker Hub. This allows you to share your images with others or use them in different environments.
+15. ``` docker pull image_name``` - To pull any docker image and run in your local environment inside container.
+16. ``` docker run -i -t image_name file_path_where_we_want_to_run ``` - To run the pulled image. -i for interactive mode, -t for see the details or operations on terminal, file_path can be anything where we want to run pulled the image like /bin/bash for ubuntu etc.
+
+Note :
++ If we will take any image from docker hub and run directly on local environment for container then it will search locally if the image is available or not and if it will not get then it will pull from docker hub and then it will run inside container in the given file path. Then do your task with the image commands.
++ In case pulling any image from docker hub (ex: ubuntu) we are intalling complete ubuntu inside container, instead it will just take some instance or files of ubuntu for running inside container and we can use ubunut commands to check all the host system resources with that image.
+17. If we have not pulled any image from docker hub and we will try to run any image which is available in docker hub with port mapping then again it will search locally if the image is available or not and if it will not get then it will pull from docker hub and then it will run inside container in the given file path. Then do your task with the image commands.
+
+Ex. ``` docker run -p host_port:container_port image_name``` - image_name will be any image from docker hub.
+
+##### For running container we have 3 ways
+
+1. Created image with docker file and run inside container
+2. Pull docker image from docker hub and run inside container
+2. Create image with docker container and run or push on docker hub
+
+#
+A. ``` docker run --name container_name -it ubuntu /bin/bash``` - To create container with our choice and run un interactive mode on the terminal (-i -t is same as -it) for image ubuntu and bash terminal.
+B. ``` docker diff container_name ``` - To see what are the changes we have done in the image inside container.
+C. ``` docker commit container_name new_image_name ``` - This will help to create new image for the already created container (of ubuntu for which we had created container).
