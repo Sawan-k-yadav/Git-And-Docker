@@ -135,7 +135,10 @@ Note :
 + In case pulling any image from docker hub (ex: ubuntu) we are intalling complete ubuntu inside container, instead it will just take some instance or files of ubuntu for running inside container and we can use ubunut commands to check all the host system resources with that image.
 17. If we have not pulled any image from docker hub and we will try to run any image which is available in docker hub with port mapping then again it will search locally if the image is available or not and if it will not get then it will pull from docker hub and then it will run inside container in the given file path. Then do your task with the image commands.
 
-Ex. ``` docker run -p host_port:container_port image_name``` - image_name will be any image from docker hub.
++ Ex. ``` docker run -p host_port:container_port image_name``` - image_name will be any image from docker hub.
+
+18. Listing running containers with volumes: Use the ``` docker ps -a --format '{{.ID}}\t{{.Image}}\t{{.Mounts}}' ``` command to list all containers with their IDs, images, and mounted volumes.
++ volumes is A persistent storage unit that can be used to store data within containers. It's separate from the image.
 
 ##### For running container we have 3 ways
 
@@ -144,6 +147,6 @@ Ex. ``` docker run -p host_port:container_port image_name``` - image_name will b
 2. Create image with docker container and run or push on docker hub
 
 #
-A. ``` docker run --name container_name -it ubuntu /bin/bash``` - To create container with our choice and run un interactive mode on the terminal (-i -t is same as -it) for image ubuntu and bash terminal.
-B. ``` docker diff container_name ``` - To see what are the changes we have done in the image inside container.
-C. ``` docker commit container_name new_image_name ``` - This will help to create new image for the already created container (of ubuntu for which we had created container).
+1. ``` docker run --name container_name -it ubuntu /bin/bash``` - To create container with our choice and run on interactive mode on the terminal (-i -t is same as -it) for image ubuntu and bash terminal.
+2. ``` docker diff container_name ``` - To see what are the changes we have done in the image inside container.
+3. ``` docker commit container_name new_image_name ``` - This will help to create new image for the already created container (of ubuntu for which we had created container).
