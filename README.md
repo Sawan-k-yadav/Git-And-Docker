@@ -113,7 +113,9 @@ It is dynamic, means whenever we need we can increase it resource size like memo
 + ``` -d``` - It imeans detach mode, meaning it will run in the background and you can continue to use the terminal.
 6. ``` docker ps ``` - To check details of runninf container.
 + ``` docker ps -a ``` - To check details of all the containers even if they are running or not.
-7. ``` docker stop <container_id> ``` - To stop the docker container 
+7. ``` docker stop <container_id> ``` - To stop the docker container.
++ ``` docker rm <container_id> ``` - To stop any container.
++ ``` docker rm $(docker ps -a -q) ``` - To remove all containers at once.
 8. To determine memory usage, use the ``` docker stats ``` command to monitor running containers. If find any containers which are not use then we can delete, if needed.
 
 ## Additional commands:
@@ -129,6 +131,7 @@ It is dynamic, means whenever we need we can increase it resource size like memo
 14. ``` docker push user_name/repo_name or image_name ``` -  This command is used to upload a Docker image to a remote repository, such as Docker Hub. This allows you to share your images with others or use them in different environments.
 15. ``` docker pull image_name``` - To pull any docker image and run in your local environment inside container.
 16. ``` docker run -i -t image_name file_path_where_we_want_to_run ``` - To run the pulled image. -i for interactive mode, -t for see the details or operations on terminal, file_path can be anything where we want to run pulled the image like /bin/bash for ubuntu etc.
+17. ``` docker build -t newimage -f Dockerfile1 . ``` - To build new_image with different docker file. If we have more than one docker file in the project then need to use -f dockerfile_name at the end and then dot(.) for choosing local folder.
 
 Note :
 + If we will take any image from docker hub and run directly on local environment for container then it will search locally if the image is available or not and if it will not get then it will pull from docker hub and then it will run inside container in the given file path. Then do your task with the image commands.

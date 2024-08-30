@@ -1,0 +1,10 @@
+FROM ubuntu
+WORKDIR /TMP
+RUN echo "New Docker file to ENV"
+
+#ENV used to make any variable (myname) and its value (sawan)
+ENV myname sawan
+COPY testfile /TMP
+
+#To add any file from internet or from local
+ADD test.tar.gz /tmp
